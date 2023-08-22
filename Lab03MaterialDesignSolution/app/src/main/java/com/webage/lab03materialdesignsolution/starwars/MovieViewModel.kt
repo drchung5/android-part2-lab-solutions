@@ -1,5 +1,6 @@
 package com.webage.lab03materialdesignsolution.starwars
 
+import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -19,7 +20,7 @@ class MovieViewModel : ViewModel() {
             try {
                 _movieWrapper.value = movieService.getMovies()
             } catch (e: Exception) {
-
+                Log.wtf("GET_MOVIES",e.message)
             }
         }
     }
